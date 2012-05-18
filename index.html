@@ -1,0 +1,444 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Maraschino Portal</title>
+
+<link rel="shortcut icon" href="favicon.ico" />
+
+<script src="SpryAssets/SpryTabbedPanels.js" type="text/javascript"></script>
+<link href="SpryAssets/SpryTabbedPanels.css" rel="stylesheet" type="text/css" />
+
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+
+<script type='text/javascript'>//<![CDATA[ 
+$(window).load(function(){
+$('.classname').on('click', function(e) {
+    e.preventDefault();
+
+    var currentObject = $(this),
+        url = currentObject.attr('href');
+
+
+    $.ajax({
+      url: url,
+	  
+      success: function(data, textStatus, jqXHR) {
+          if(data == 'Ok') {
+            document.getElementById("field2").value="Updating"
+			 // Do stuff when it's ok
+             currentObject.addClass('ok');   
+          } else {
+             document.getElementById("field2").value="NUpdating" 
+             currentObject.removeClass('ok');   
+          }
+      }
+    });
+    
+});
+});//]]>  
+</script>
+
+<style type="text/css">
+iframe#ifrm {
+	width: 81%;
+	height:95%;
+	margin: auto;
+	border:1px none #d0d0d0;
+	position: absolute;
+	z-index: 10;
+	left: 272px;
+	top: 33px;
+    }
+#navi {
+	position: absolute;
+	z-index: 10000;
+	left: 272px;
+	top: 6px;
+	}
+
+#navi ul {
+		font-family: Arial, Verdana;
+		font-size: 14px;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+			}
+#navi	ul li {
+		display: block;
+		position: relative;
+		float: left;
+		}
+#navi	li ul { display: none; }
+#navi	ul li a {
+	display: block;
+	text-decoration: none;
+	color: #999;
+	white-space: nowrap;
+	background-color: #262626;
+	border: 1px solid #4d4d4d;
+	font-family: Verdana, Geneva, sans-serif, "Arial Narrow";
+	font-size: 10px;
+	padding-top: 4px;
+	padding-right: 7px;
+	padding-bottom: 4px;
+	padding-left: 7px;
+	margin-right: 4px;
+	font-weight: bold;
+	}
+
+
+		
+#navi	ul li a:hover {
+	background-color: #FFCE0D;
+	color: #333;
+	}
+#navi	li:hover ul { 
+		display: block; 
+		position: absolute;
+		}
+#navi	li:hover li { 
+		float: none;
+		font-size: 11px;
+		}
+#navi	li:hover a {
+	color: #666;
+	background-color: #FFF;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #999;
+	border-right-color: #999;
+	border-bottom-color: #999;
+	border-left-color: #999;
+	-webkit-box-shadow:  6px 6px 12px 4px rgba(0, 0, 0, .4);
+	box-shadow:  6px 6px 12px 4px rgba(0, 0, 0, .4);
+
+	}
+#navi	li:hover li a:hover {
+	background: #FFCE0D;
+	}
+
+
+.classname {
+	background-color:#262626;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:1px;
+	border:1px solid #4D4D4D;
+	display:inline-block;
+	color:#d1d1d1;
+	font-family:arial;
+	font-size:10px;
+	font-weight:normal;
+	padding:4px 12px;
+	text-decoration:none;
+	text-shadow:6px 1px 7px #000000;
+	}
+.classname:hover {
+	background-color:#FFCE0D;
+	color: #333;
+	}
+.classname:active {
+	position:relative;
+	top:1px;
+	}
+
+.classname2 {
+	background-color:#262626;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:1px;
+	border:1px solid #4D4D4D;
+	display:inline-block;
+	color:#d1d1d1;
+	font-family:arial;
+	font-size:10px;
+	font-weight:bold;
+	padding:4px 30px;
+	text-decoration:none;
+	text-shadow:6px 1px 7px #000000;
+	}
+.classname2:hover {
+	background-color:#FFCE0D;
+	color: #333;
+	}
+.classname2:active {
+	position:relative;
+	top:1px;
+	}
+
+.rss-box {
+	width: 250px;
+	background-color: #262626;
+	}
+
+.rss-title, rss_title a {
+	margin: 0px 0;
+	padding: 0;
+	}
+
+.rss-items {
+    margin:0;
+    padding:0px;
+	}
+
+.rss-item  {
+	font-size: 7.1pt;
+	margin-bottom: 4px;
+	text-decoration: none;
+	background-color: #393939;
+	line-height: normal;
+	display: compact;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 2px;
+	font-family: "Arial Narrow", Verdana, Geneva, sans-serif;
+	font-weight: bold;
+	}
+
+.rss-item a:link, .rss-item a:visited, .rss-item a:active {
+	background-color: #393939;
+	color: #CCC;
+	}
+
+.rss-item a:hover {
+	color: #FFCE0D;
+	font-weight: bold;
+	}
+
+.rss-date {
+	font-size: xx-small;
+	}
+#nav {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 11px;
+	color: #CCC;
+	padding: 5px;
+	margin-left: 0;
+	margin-right: 0px;
+	top: 0px;
+	width: 248px;
+	height: 24px;
+	border: thin solid #4D4D4D;
+	margin-top: 6px;
+	}
+
+#nav strong {
+	color: #FFCE0D;
+	padding-right: 7px;
+	padding-left: 7px;
+	}
+</style>
+</head>
+
+<body><body bgcolor="#262626">
+
+ <!--
+################################################################################### 
+#		This section is for the RSS List Tabs. Each <li> is a new tab. Make
+#		sure that each <li> line matches each <div> in section below. 
+#
+#		http://jade.mcli.dist.maricopa.edu/feed/index.php?s=build
+#
+#           Enter the following:
+#            - URL for the RSS feed you want.
+#            - Show Channel = no
+#          	 - Number of items = I use 25, depending on your screen size
+#            - Show/Hide descriptions=0
+#            - Use HTML= 0
+#            - Show date = no
+#            - Time Zone = feed
+#            - Target Links in new window = main - VERY IMPORTANT
+#            - Podcast Enclosures = no
+#
+#		Then paste the generated script replacing the script section below.
+#####################################################################################
+ -->
+
+<div id="TabbedPanels1" class="TabbedPanels">
+  <ul class="TabbedPanelsTabGroup">
+    <li class="TabbedPanelsTab" tabindex="0">Movies</li>
+    <li class="TabbedPanelsTab" tabindex="0">TV</li>
+    <li class="TabbedPanelsTab" tabindex="0">Xbox</li>
+    <li class="TabbedPanelsTab" tabindex="0">LH</li>
+    <li class="TabbedPanelsTab" tabindex="0"><img src="images/engadget_iconsm.png" width="14" height="14" /></li>
+  </ul>
+  <div class="TabbedPanelsContentGroup">
+ <!--
+################################################################################### 
+#		This section is for the RSS List content. Each <div> is an RSS fee . To create
+#		your own custom RSS tab, you need to go to: 
+#
+#		http://jade.mcli.dist.maricopa.edu/feed/index.php?s=build
+#
+#           Enter the following:
+#            - URL for the RSS feed you want.
+#            - Show Channel = no
+#          	 - Number of items = I use 25, depending on your screen size
+#            - Show/Hide descriptions=0
+#            - Use HTML= 0
+#            - Show date = no
+#            - Time Zone = feed
+#            - Target Links in new window = myiframe - VERY IMPORTANT
+#            - Podcast Enclosures = no
+#
+#		Then paste the generated script replacing the script in each <div> section below.
+#####################################################################################
+ -->
+
+    <div class="TabbedPanelsContent"><script language="JavaScript" src="http://jade.mcli.dist.maricopa.edu/feed/feed2js.php?src=http%3A%2F%2Frss.nzbmatrix.com%2Frss.php%3Fpage%3Ddetails%26subcat%3D42%26english%3D1&amp;num=25&amp;targ=myiframe" type="text/javascript"></script></div>
+    
+    <div class="TabbedPanelsContent"><script language="JavaScript" src="http://jade.mcli.dist.maricopa.edu/feed/feed2js.php?src=http%3A%2F%2Frss.nzbmatrix.com%2Frss.php%3Fsubcat%3D41&amp;num=25&amp;targ=myiframe" type="text/javascript"></script></div>
+    
+     <div class="TabbedPanelsContent"><script language="JavaScript" src="http://jade.mcli.dist.maricopa.edu/feed/feed2js.php?src=http%3A%2F%2Frss.nzbmatrix.com%2Frss.php%3Fsubcat%3D14&amp;num=25&amp;targ=myiframe" type="text/javascript"></script></div>   
+
+     <div class="TabbedPanelsContent"><script language="JavaScript" src="http://jade.mcli.dist.maricopa.edu/feed/feed2js.php?src=http%3A%2F%2Ffeeds.gawker.com%2Flifehacker%2Fexcerpts.xml&amp;num=25&amp;targ=myiframe" type="text/javascript"></script></div> 
+      
+      <div class="TabbedPanelsContent"><script language="JavaScript" src="http://jade.mcli.dist.maricopa.edu/feed/feed2js.php?src=http%3A%2F%2Fwww.engadget.com%2Frss.xml&amp;num=25&amp;targ=myiframe" type="text/javascript"></script>
+</script></div>  
+    
+  </div>
+</div>
+
+ <!--
+################################################################################### 
+#		This section are the custom buttons below the RSS  Feed Tabs.
+#		Edit the links to either point to the correct IP of
+#		your XBMC machine. Or create your own custom link. 
+#
+#		Please note that items with class=classname are to send
+#		commands to XBMC. Items with class=clasname2 are to open
+#       regular web links.   
+#
+#		Refer to this wiki for available commands to send to XBMC:
+#       http://wiki.xbmc.org/index.php?title=List_of_built-in_functions
+#
+#		And this one for XBMC keyboard commands to do something like:
+#			XBMC.Action(ShowSubtitles)
+#		See list here: http://wiki.xbmc.org/index.php?title=Keyboard.xml
+#		
+#####################################################################################
+ -->
+  
+
+<div id="nav" ><strong>Music </strong> 
+      <a class="classname" href="http://192.168.0.102:80/xbmcCmds/xbmcHttp?command=ExecBuiltIn&parameter=XBMC.UpdateLibrary(music)">Update</a>
+      <a class="classname" href="http://192.168.0.102:80/xbmcCmds/xbmcHttp?command=ExecBuiltIn&parameter=XBMC.CleanLibrary(music)">Clean</a>
+</div>
+    
+<div id="nav" ><strong>Video </strong> 
+      <a class="classname" href="http://192.168.0.102:80/xbmcCmds/xbmcHttp?command=ExecBuiltIn&parameter=XBMC.UpdateLibrary(video)">Update</a>
+      <a class="classname" href="http://192.168.0.102:80/xbmcCmds/xbmcHttp?command=ExecBuiltIn&parameter=XBMC.CleanLibrary(video)">Clean</a>
+      <a class="classname" href="http://192.168.0.102:80/xbmcCmds/xbmcHttp?command=ExecBuiltIn&parameter=XBMC.Reboot">Reboot</a> 
+</div>
+
+<div id="nav" ><strong>Email </strong> 
+		<a class="classname2" href="your link here" target="myiframe">Work</a> 
+		<a class="classname2" href="your link here" target="myiframe">Personal</a> 
+</div>
+
+ <!--
+################################################################################### 
+#		This section is the top Navigation Bar
+#		
+#		Hopefully this is self explanatory. Replace all my  
+#		links to customize for your own needs. Use my example
+#		for drop down items. 
+#		
+#       I have used images instead of words for some of my menus. I   
+#		have included PSD files in /images/ folder so you can modify
+#		and create your own images. I found this we site helpful to get logos:
+#       http://userlogos.org/logos
+#
+#		For Sab, Sickbeard, Maraschino, and Couchpotato	put your own IP
+#		addresses in the first set of <li> tags below.
+#
+#
+#
+#####################################################################################
+ -->
+
+<script type="text/javascript">
+var TabbedPanels1 = new Spry.Widget.TabbedPanels("TabbedPanels1");
+</script>
+<div id="navi" class="navi">	
+		<ul >
+			<li ><a href="http://192.168.0.201:7000/#" title="" target="myiframe">Home</a></li> <!--This my Maraschino IP, This way I can always return to it as a home page-->
+   			<li ><a href="http://192.168.0.201:88/#/dv1/" title="" target="myiframe">sabNZBD+</a></li> 
+			<li><a href="http://192.168.0.201:8081/" title="" target="myiframe">Sickbeard</a></li> 
+			<li><a href="http://192.168.0.201:5000/movie/" title="" target="myiframe">Couchpotato</a></li> 
+			<li><a href="http://192.168.0.201:8091/" title="Papo Papo" target="myiframe">Headphones Dad</a></li> 
+			<li><a href="http://192.168.0.201:8092/" title="" target="myiframe">Headphones Mom</a></li> 
+
+		    <li><a href="" target="myiframe">NZB Sites</a> 
+		      <ul >
+		      	<li><a href="http://nzbmatrix.com/nzb.php?cat=42" target="myiframe" title="Movies"><img src="images/movies.png" width="104" height="104" /></a></li>
+		        <li><a href="http://nzbmatrix.com/nzb.php?cat=41" target="myiframe" title="TV"><img src="images/tv.png" width="104" height="104" /></a></li> 
+		        <li><a href="http://nzbmatrix.com/nzb.php?category=Apps" target="myiframe" title="Applications"><img src="images/apps.png" width="104" height="104" /></a></li> 
+		        <li><a href="http://nzbmatrix.com/nzb.php?cat=14" target="myiframe" title="Xbox"><img src="images/xbox.png" width="104" height="104" /></a></li> 
+		        <li><a href="http://nzbs.org/ I wish I had an account here - " target="myiframe" title="NZBs.org"><img src="images/nzbsdotorg.png" width="104" height="50" /></a></li> 
+		      </ul> 
+		    </li> 
+
+		    <li><a href="" target="myiframe">Forums</a> 
+		      <ul > 
+		        <li><a href="http://forum.xbmc.org/index.php" target="myiframe"><img src="images/xbmc.png" width="140" height="50" /></a></li> 
+		        <li><a href="http://openelec.tv/forum/recent" target="myiframe"><img src="images/openelec.png" width="140" height="50" /></a></li> 
+		        <li><a href="http://lime-technology.com/forum/index.php" target="myiframe"><img src="images/unraid.png" width="140" height="50" /></a></li> 
+                <li><a href="http://forums.maraschinoproject.com/index.php" target="myiframe"><img src="images/maraschino.png" width="140" height="50" /></a></li> 
+		      </ul> 
+		    </li>
+
+		    <li><a href="" target="myiframe">dBases</a> 
+		      <ul > 
+		        <li><a href="http://www.imdb.com/" target="myiframe">IMDB</a></li> 
+		        <li><a href="http://www.themoviedb.org/" target="myiframe">TheMovieDB</a></li> 
+		        <li><a href="http://thetvdb.com/" target="myiframe">TheTVDB</a></li> 
+ 		        <li><a href="http://www.joblo.com/blu-rays-dvds/release-dates/?" target="myiframe">DVD Releases</a></li> 
+		        <li><a href="http://www.movieweb.com/movies/2012" target="myiframe">2012 Movies</a></li> 
+		        <li><a href="http://www.rlslog.net/category/movies/hdrip/" target="myiframe">RlsLog.net</a></li>                
+                <li><a href="http://www.rottentomatoes.com/news/" target="myiframe">Rotten Tomatoes</a></li>                
+		      </ul> 
+		    </li> 
+
+		    <li><a href="" target="myiframe">unRAID</a> 
+		      <ul > 
+		        <li><a href="http://forum.xbmc.org/index.php" target="myiframe">unMenu</a></li> 
+		      </ul> 
+		    </li>
+		    <li><a href="" target="myiframe">Favorites</a> 
+		      <ul > 
+		        <li><a href="http://www.engadget.com/" target="myiframe"><img src="images/engadget.png" width="104" height="60" /></a></li> 
+		        <li><a href="http://blog.lifehacker.com/" target="myiframe"><img src="images/lifehacker.png" width="104" height="60" /></a></li> 
+		        <li><a href="http://your demonoid link here" target="myiframe"><img src="images/demonoid.png" width="104" height="60" /></a></li> 
+ 		        <li><a href="http://www.warez-bb.org/" target="myiframe"><img src="images/warezbb.png" width="104" height="60" /></a></li> 
+		        <li><a href="http://www.cnn.com/" target="myiframe"><img src="images/cnn.png" width="104" height="60" /></a></li>                
+		        <li><a href="http://www.trakt.tv/" target="myiframe"><img src="images/trakt.png" width="104" height="60" /></a></li>                
+
+		      </ul> 
+		    </li> 
+		</ul>	
+	</div>
+
+
+ <!--
+################################################################################### 
+#		This section is the Main Screen!
+#		
+#		Change the IP to be the IP of your Maraschino. This way it will  
+#		open to the Maaraschino page by default. All links above open in this iframe.
+#		 
+#####################################################################################
+ -->
+
+<iframe id="ifrm" name="myiframe" src="http://192.168.0.201:7000/#">
+
+</body>
+</html>
